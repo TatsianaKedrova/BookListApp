@@ -38,6 +38,12 @@ class UI {
 
         list.appendChild(row);
     }
+    static clearFields() {
+        document.querySelector('#title').value = '';
+        document.querySelector('#author').value = '';
+        document.querySelector('#number').value = '';
+
+    }
 }
 //Store Class: handles Storage
 
@@ -59,6 +65,11 @@ event.preventDefault();
     const book = new Book(title, author, number);
     console.log(book);
 
+    //Add book to UI
+    UI.addBookToList(book);
+
+    //Clear fields in UI
+    UI.clearFields();
 });
 //Event: Remove a book
 
